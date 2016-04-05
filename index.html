@@ -1,28 +1,47 @@
 <!DOCTYPE html>
 <html>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 	<head>
-		<title></title>
+		<title>Stream_SSJ</title>
+		<link rel="icon" href="data:;base64,=">
 		<link href="css/main.css" rel="stylesheet" type="text/css">
-		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery-2.2.2.min.js"></script>
 		<script type="text/javascript" src="js/Get_id.js"></script> 
 		<script type="text/javascript" src="js/Stick.js"></script>
 	    <script type="text/javascript" src="js/Throttle1.js"></script>
 	    <script type="text/javascript" src="js/Throttle2.js"></script>
 	    <script type="text/javascript" src="js/Rudder.js"></script>
 	    <script type="text/javascript" src="js/Core.js"></script>
-		<script language="javascript">
-			document.onmousedown=disableclick;
-			function disableclick(event){
-			  if(event.button==2){
-			     return false;    
-			   }
-			}
-		</script>
 	</head>
-	<body oncontextmenu="return false">
-	    <canvas id="Throttle1" style="border:2px solid #005100; display: none;"></canvas>
-		<canvas id="Stick" style="border:2px solid #005100; display: none;"></canvas>
-	    <canvas id="Throttle2" style="border:2px solid #005100; display: none;"></canvas>
-	    <canvas id="Rudder" style="border:2px solid #005100; display: none;"></canvas>
+	<body>
+		<div id="log">Подключите геймпад и нажмите любую кнопку</div>
+	    <canvas id="Throttle1" style="display: none;"></canvas><canvas id="Throttle2" style="display: none;"></canvas>
+		<canvas id="Stick" style="display: none;"></canvas>
+	    <canvas id="Rudder" style="display: none;"></canvas>
+	    <!-- Variables -->
+		<div id = "Throttle_var" style="display: none"></div>
+		<div id = "Throttle1_crosshair_var" style="display: none"></div>
+		<div id = "Throttle2_crosshair_var" style="display: none"></div>
+		<var id = "Stick_var" style="display: none"></var>
+		<var id = "Rudder_var" style="display: none"></var>
+		<var id = "Ruder_crosshair_var" style="display: none"></var>
+		<var id = "Stick_xy_color_var" style="display: none"></var>
+		<var id = "Stick_circle_color_var" style="display: none"></var>
+		<var id = "Stick_crosshair_var" style="display: none"></var>
+		<var id = "Stick_crosshair_var" style="display: none"></var>
+		<var id = "Stick_xy_diag_color_var" style="display: none"></var>
+		<script type="text/javascript">
+			$( document ).ready(function() {
+   				document.getElementById("log").style.width = parseInt($('#Throttle_var').css('width').replace('px', ''))*2 + parseInt($('#Throttle_var').css('border-right').replace('px', '')) + parseInt($('#Stick_var').css('width').replace('px', '')) + 14 + 'px';
+				document.getElementById("log").style.height = parseInt($('#Throttle_var').css('height').replace('px', '')) + parseInt($('#Rudder_var').css('height').replace('px', '')) + "px";
+				connected();
+				window.addEventListener("gamepadconnected", function() {
+					connected();
+				});
+				window.addEventListener("gamepaddisconnected", function() {
+					disconnected();
+				});
+			});
+		</script>
 	</body>
 </html>

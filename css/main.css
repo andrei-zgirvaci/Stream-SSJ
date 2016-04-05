@@ -1,6 +1,61 @@
 @charset "utf-8";
 #Rudder{
 	display: block;
-	left: 29px;
 	position: absolute;
+}
+#log{
+	display: table-cell;
+	font-family: sans-serif;
+	font-weight: bold;
+	font-size: 16px;
+	text-align: center;
+	vertical-align: middle;
+	color: rgba(255, 0, 0, 1);
+}
+#Throttle_var{
+	width: 20px;
+	height: 250px;
+	background-color: rgba(0, 128, 0, 1);
+	border-right: 2px;
+	border-right-style: solid;
+	border-right-color: rgba(0, 81, 0, 1);
+}
+#Throttle1_crosshair_var{
+	width: 3px;
+	background-color: rgba(255, 0, 0, 1);
+}
+#Throttle2_crosshair_var{
+	width: 3px;
+	background-color: rgba(255, 0, 0, 1);
+}
+#Rudder_var{
+	width: 2px;
+	height: 28px;
+	background-color: rgba(0, 128, 0, 1);
+	border-width: 0px;
+	border-style: solid;
+	border-color: rgba(0, 81, 0, 1);
+}
+#Ruder_crosshair_var{
+	width: 6px;
+	background-color: rgba(255, 0, 0, 1);
+}
+#Stick_var{
+	width: 250px;
+	border-width: 0px;
+	border-style: solid;
+	border-color: rgba(0, 81, 0, 1);
+}
+#Stick_xy_color_var{
+	background-color: rgba(0, 128, 0, 1);
+}
+#Stick_circle_color_var{
+	background-color: rgba(0, 128, 0, 1);
+}
+#Stick_crosshair_var{
+	width: 20px;
+	background-color: rgba(255, 0, 0, 1);
+}
+#Stick_xy_diag_color_var{
+	background-color: rgba(0, 128, 0, 1);
 }

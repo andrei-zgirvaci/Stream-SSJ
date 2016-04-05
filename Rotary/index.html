@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<head>
+		<title>Stream_SSJ</title>
+		<link rel="icon" href="data:;base64,=">
+		<link href="css/main.css" rel="stylesheet" type="text/css">
+		<script type="text/javascript" src="js/jquery-2.2.2.min.js"></script>
+		<script type="text/javascript" src="js/Get_id.js"></script> 
+		<script type="text/javascript" src="js/Rotary.js"></script>
+	    <script type="text/javascript" src="js/Core.js"></script>
+	</head>
+	<body>
+		<div id="log">Подключите геймпад и нажмите любую кнопку</div>
+		<canvas id="Rotary" style="display: none;"></canvas>
+	    <!-- Variables -->
+		<var id = "Rotary_var" style="display: none"></var>
+		<var id = "Rotary_crosshair_var" style="display: none"></var>
+		<script type="text/javascript">
+			$( document ).ready(function() {
+				document.getElementById("log").style.width = parseInt($('#Rotary_var').css('width').replace('px', '')) +  "px";
+				document.getElementById("log").style.height = parseInt($('#Rotary_var').css('width').replace('px', '')) +  "px";
+				connected();
+				window.addEventListener("gamepadconnected", function() {
+					connected();
+				});
+				window.addEventListener("gamepaddisconnected", function() {
+					disconnected();
+				});
+			});
+		</script>
+	</body>
+</html>

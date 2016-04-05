@@ -1,0 +1,15 @@
+Documentatia:
+  ☐ Rudder-Line_thickness -> Rudder_var
+  ☐ Rudder-Line-color -> Rudder_var
+  ☐ Rudder_thickness -> Ruder_crosshair_var
+  ☐ Rudder-color -> Ruder_crosshair_var
+  ☐ Diagonale -> background_color
+  ☐ Throttle1 & Throttle2 -> Full documentation
+Work:
+  ✔ @high Throttle1 & Throttle2 ca si in DCS:World @done (16-04-04 19:20)
+  ✔ @high Routary @done (16-04-04 21:23)
+  ✔ mai multe cercuri cu radius mai putin @done (16-04-04 17:35)
+  ✔ in cerntru de lasat loc @done (16-04-04 17:39)
+  ✔ diagonalele pe linga axa OX si OY @done (16-04-04 18:20)
+  ✔ toate axele sa isi schimbe lungimea in dependenta de crosshair @done (16-04-04 18:31)
+  ✔ sa ii adaug axele lui sasa la rotary @done (16-04-04 22:54)
