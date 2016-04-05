@@ -1,58 +1,45 @@
-function reportOnGamepad() {
+function pageRender(){
 	draw_Crosshair();
 	draw_Throttle1();
 	draw_Throttle2();
 	draw_Rudder();
+	requestAnimationFrame(pageRender);
 }
 
-function canGame() {
-	return "getGamepads" in navigator;
-}
-
-var hasGP = false;
-var repGP;
-	
-$(document).ready(function() {
-	if(canGame()) {
-		//if connected
-		$(window).on("gamepadconnected", function() {
-			if(get_id('10-Button USB Joystick (Vendor: 0458 Product: 3019)')){
-				document.getElementById("Throttle1").style.display = 'inline';
-				document.getElementById("Stick").style.display = 'inline';
-				document.getElementById("Throttle2").style.display = 'inline';
-				document.getElementById("Rudder").style.display = 'block';
-			}
-			if(get_id('Pro Flight X65 Control System (Vendor: 06a3 Product: 0b6a)')){
-				document.getElementById("Throttle1").style.display = 'inline';
-				document.getElementById("Stick").style.display = 'inline';
-				document.getElementById("Throttle2").style.display = 'inline';
-				document.getElementById("Rudder").style.display = 'block';
-			}
-			if(get_id('VKB Tiny BOX  (Vendor: 231d Product: 011d)')){
-				document.getElementById("Throttle1").style.display = 'inline';
-				document.getElementById("Stick").style.display = 'inline';
-				document.getElementById("Throttle2").style.display = 'inline';
-				document.getElementById("Rudder").style.display = 'block';
-			}
-			hasGP = true;
-			repGP = window.setInterval(reportOnGamepad,100);
-		});
-		//if disconnected
-		$(window).on("gamepaddisconnected", function() {
-			init_Crosshair();
-			init_Throttle1();
-			init_Throttle2();
-			init_Rudder();
-			console.log("gamepad disconnected");
-			window.clearInterval(repGP);
-		});
-		//setup an interval for Chrome
-		var checkGP = window.setInterval(function() {
-			console.log('checking for changes');
-			if(navigator.getGamepads()) {
-				if(!hasGP) $(window).trigger("gamepadconnected");
-				window.clearInterval(checkGP);
-			}
-		}, 500);
+function connected(){
+	if(get_id('10-Button USB Joystick (Vendor: 0458 Product: 3019)')){
+		$("#Throttle1").css("display","inline");
+		$("#Stick").css("display","inline");
+		$("#Throttle2").css("display","inline");
+		$("#Rudder").css("display","block");
+		$("#log").css("display","none");
+		console.log("10-Button USB Joystick (Vendor: 0458 Product: 3019)" + " connected");
+		pageRender();
 	}
-});
+	else if(get_id('Pro Flight X65 Control System (Vendor: 06a3 Product: 0b6a)')){
+		$("#Throttle1").css("display","inline");
+		$("#Stick").css("display","inline");
+		$("#Throttle2").css("display","inline");
+		$("#Rudder").css("display","block");
+		$("#log").css("display","none");
+		console.log("Pro Flight X65 Control System (Vendor: 06a3 Product: 0b6a)" + " connected");
+		pageRender();
+	}
+	else if(get_id('VKB Tiny BOX  (Vendor: 231d Product: 011d)')){
+		$("#Throttle1").css("display","inline");
+		$("#Stick").css("display","inline");
+		$("#Throttle2").css("display","inline");
+		$("#Rudder").css("display","block");
+		$("#log").css("display","none");
+		console.log("VKB Tiny BOX  (Vendor: 231d Product: 011d)" + " connected");
+		pageRender();
+	}
+}
+
+function disconnected(){
+	$("#Throttle1").css("display","none");
+	$("#Stick").css("display","none");
+	$("#Throttle2").css("display","none");
+	$("#Rudder").css("display","none");
+	$("#log").css("display","table-cell");
+}

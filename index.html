@@ -32,7 +32,7 @@
 		<var id = "Stick_xy_diag_color_var" style="display: none"></var>
 		<script type="text/javascript">
 			$( document ).ready(function() {
-   				document.getElementById("log").style.width = parseInt($('#Throttle_var').css('width').replace('px', ''))*2 + parseInt($('#Throttle_var').css('border-right').replace('px', '')) + parseInt($('#Stick_var').css('width').replace('px', '')) + 14 + 'px';
+   				document.getElementById("log").style.width = parseInt($('#Throttle_var').css('width').replace('px', ''))*2 + parseInt($('#Stick_var').css('width').replace('px', '')) + 20 + "px";
 				document.getElementById("log").style.height = parseInt($('#Throttle_var').css('height').replace('px', '')) + parseInt($('#Rudder_var').css('height').replace('px', '')) + "px";
 				connected();
 				window.addEventListener("gamepadconnected", function() {

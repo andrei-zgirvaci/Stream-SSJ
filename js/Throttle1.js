@@ -30,7 +30,7 @@ function draw_Throttle1(){
 		gp = get_id('10-Button USB Joystick (Vendor: 0458 Product: 3019)');
 		Throttle_height = $('#Throttle_var').css('height').replace('px', '');
 		Throttle_width = $('#Throttle_var').css('width').replace('px', '');
-		Throttle_thickness = $('#Throttle1_crosshair_var').css('width').replace('px', '');;
+		Throttle_thickness = $('#Throttle1_crosshair_var').css('width').replace('px', '');
 		Throttle_pos = Throttle_height/2 - Throttle_thickness/2;
 
 		init_Throttle1();
