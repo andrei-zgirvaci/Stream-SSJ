@@ -32,7 +32,7 @@
 	width: 2px;
 	height: 28px;
 	background-color: rgba(0, 128, 0, 1);
-	border-width: 0px;
+	border-width: 2px;
 	border-style: solid;
 	border-color: rgba(0, 81, 0, 1);
 }
@@ -42,11 +42,14 @@
 }
 #Stick_var{
 	width: 250px;
-	border-width: 0px;
+	border-width: 2px;
 	border-style: solid;
 	border-color: rgba(0, 81, 0, 1);
 }
 #Stick_xy_color_var{
+	background-color: rgba(0, 128, 0, 1);
+}
+#Stick_xy_diag_color_var{
 	background-color: rgba(0, 128, 0, 1);
 }
 #Stick_circle_color_var{
@@ -55,7 +58,4 @@
 #Stick_crosshair_var{
 	width: 20px;
 	background-color: rgba(255, 0, 0, 1);
-}
-#Stick_xy_diag_color_var{
-	background-color: rgba(0, 128, 0, 1);
 }

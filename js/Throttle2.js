@@ -1,6 +1,6 @@
 function init_Throttle2(){
 	canvas = document.getElementById("Throttle2");
-	canvas.height = $('#Throttle_var').css('height').replace('px', '');
+	canvas.height = parseInt($('#Throttle_var').css('height').replace('px', '')) + parseInt($('#Stick_var').css('border-width').replace('px', ''))*2;
 	canvas.width = $('#Throttle_var').css('width').replace('px', '');
 }
 

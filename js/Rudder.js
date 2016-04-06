@@ -6,7 +6,7 @@ function init_Rudder(){
 	canvas.style.borderWidth = $('#Rudder_var').css('border-width');
 	canvas.style.borderStyle = $('#Rudder_var').css('border-style');
 	canvas.style.borderColor = $('#Rudder_var').css('border-color');
-	canvas.style.left = parseInt($('#Throttle_var').css('width').replace('px', ''))*2 + parseInt($('#Throttle_var').css('border-right').replace('px', '')) + 12 - parseInt($('#Rudder_var').css('border-width').replace('px', '')) + "px";
+	canvas.style.left = parseInt($('#Throttle_var').css('width').replace('px', ''))*2 + parseInt($('#Throttle_var').css('border-right').replace('px', '')) + parseInt($('#Stick_var').css('border-right').replace('px', '')) + 12 - parseInt($('#Rudder_var').css('border-width').replace('px', '')) + "px";
 	//draw horizontal line
 	Line_thickness = $('#Rudder_var').css('width').replace('px', '');
 	ctx.fillStyle = $('#Rudder_var').css('background-color');
