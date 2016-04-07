@@ -16,7 +16,7 @@
 	width: 20px;
 	height: 250px;
 	background-color: rgba(0, 128, 0, 1);
-	border-right: 2px;
+	border-right-width: 2px;
 	border-right-style: solid;
 	border-right-color: rgba(0, 81, 0, 1);
 }

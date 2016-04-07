@@ -2,9 +2,9 @@ function init_Throttle1(){
 	canvas = document.getElementById("Throttle1");
 	canvas.height = parseInt($('#Throttle_var').css('height').replace('px', '')) + parseInt($('#Stick_var').css('border-width').replace('px', ''))*2;
 	canvas.width = $('#Throttle_var').css('width').replace('px', '');
-	canvas.style.borderWidth = $('#Throttle_var').css('border-width');
-	canvas.style.borderStyle = $('#Throttle_var').css('border-style');
-	canvas.style.borderColor = $('#Throttle_var').css('border-color');
+	canvas.style.borderRightWidth = $('#Throttle_var').css('border-right-width');
+	canvas.style.borderRightStyle = $('#Throttle_var').css('border-right-style');
+	canvas.style.borderRightColor = $('#Throttle_var').css('border-right-color');
 }
 
 function draw_Throttle1(){
