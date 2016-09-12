@@ -1,5 +1,5 @@
 #TaskForceArmaRadio-Frequency Generator (Stream-SSJ)
-Это веб-приложение написано на Javascript, она следит за вашим джойстиком и показавает в графическом виде. Сейчас поддерживается джойсти , подруливающее устройство, педали и крутилки.
+Это веб-приложение написано на Javascript, она следит за вашим джойстиком и показавает движение в графическом виде. Сейчас поддерживается джойстик , подруливающее устройство, педали и крутилки.
 
 НАПИСАНО: Andrei Zgirvaci
 
@@ -21,7 +21,7 @@
   3. Редактировать значения CSS переменных с вашими [Переменные для джойстика](https://github.com/MD3XTER/Stream-SSJ/blob/master/doc/doc_joystick.pdf), [Переменные для крутилок](https://github.com/MD3XTER/Stream-SSJ/blob/master/doc/doc_Rotary.pdf)
 
 ##Требования
-[OBS Studio BrowserSource Plugin](https://github.com/jp9000/obs-studio/releases/download/0.15.4/OBS-Studio-0.15.4-With-Browser-Installer.exe)
+  * [OBS Studio + BrowserSource Plugin](https://github.com/jp9000/obs-studio/releases/download/0.15.4/OBS-Studio-0.15.4-With-Browser-Installer.exe)
 
-##Применение
+##Поддержка вашего джойстика
 _Для того, чтобы этот инструмент у вас работал, свяжитесь со мной по электронной почте: zgirvaciandrei@gmail.com_
