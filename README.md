@@ -10,15 +10,11 @@
 ##CSS кастомизация
 Это приложение также имеет небольшой appi, где вы можете изменить переменные в CSS в [OBS](https://obsproject.com/). Вы можете настроить внешний вид от цвета до прозрачность, размеров осей и окна.
 
-  1. 
 ![alt text][logo1]
 [logo1]: http://i.imgur.com/gEJY2vw.png "1"
 
 ![alt text][logo2]
-[logo2]: http://i.imgur.com/VHqnbSv.png "2"
-
-![alt text][logo3]
-[logo3]: http://i.imgur.com/KJtA8qY.png "3"
+[logo2]: http://i.imgur.com/KJtA8qY.png "2"
 
 [Переменные для джойстика](https://github.com/MD3XTER/Stream-SSJ/blob/master/doc/doc_joystick.pdf)
 
