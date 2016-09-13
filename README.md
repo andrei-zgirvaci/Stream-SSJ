@@ -1,5 +1,5 @@
 #Stream-SSJ
-This is a web-application written in JavaScript, it monitors your joystick and shows it movement in a graphical form. Now it supports joystick thruster, pedals and rotary.
+This is a web-application written in JavaScript, it monitors your joystick and shows it movement in a graphical form. Now it supports joystick thrusters, pedals and rotary.
 
 WRITTEN BY: Andrei Zgirvaci
 
