@@ -21,7 +21,7 @@ This app also has a small APPI, where you can change values of CSS variables in 
   3. Edit CSS values with yours [Variables for joystick](https://github.com/MD3XTER/Stream-SSJ/blob/master/doc/doc_joystick.pdf), [Variables for rotary](https://github.com/MD3XTER/Stream-SSJ/blob/master/doc/doc_Rotary.pdf)
 
 ##Requirements
-  * [OBS Studio + BrowserSource Plugin](https://github.com/jp9000/obs-studio/releases/download/0.15.4/OBS-Studio-0.15.4-With-Browser-Installer.exe)
+  * [OBS Studio + BrowserSource Plugin](https://github.com/jp9000/obs-studio/releases)
 
 ##Support for your joystick
 _To make this tool to work for you, please contact me by e-mail: zgirvaciandrei@gmail.com_
