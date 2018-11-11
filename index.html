@@ -1,47 +1,22 @@
 <!DOCTYPE html>
-<html>
-	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<html lang="en-US">
 	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="./css/main.css">
+
 		<title>Stream-SSJ</title>
-		<link rel="icon" href="data:;base64,=">
-		<link href="css/main.css" rel="stylesheet" type="text/css">
-		<script type="text/javascript" src="js/jquery-2.2.2.min.js"></script>
-		<script type="text/javascript" src="js/Get_id.js"></script> 
-		<script type="text/javascript" src="js/Stick.js"></script>
-	    <script type="text/javascript" src="js/Throttle1.js"></script>
-	    <script type="text/javascript" src="js/Throttle2.js"></script>
-	    <script type="text/javascript" src="js/Rudder.js"></script>
-	    <script type="text/javascript" src="js/Core.js"></script>
 	</head>
 	<body>
+    <div></div>
 		<div id="log">Connect Joystick and press any button</div>
-	    <canvas id="Throttle1" style="display: none;"></canvas><canvas id="Throttle2" style="display: none;"></canvas>
-		<canvas id="Stick" style="display: none;"></canvas>
-	    <canvas id="Rudder" style="display: none;"></canvas>
-	    <!-- Variables -->
-		<div id = "Throttle_var" style="display: none"></div>
-		<div id = "Throttle1_crosshair_var" style="display: none"></div>
-		<div id = "Throttle2_crosshair_var" style="display: none"></div>
-		<var id = "Stick_var" style="display: none"></var>
-		<var id = "Rudder_var" style="display: none"></var>
-		<var id = "Ruder_crosshair_var" style="display: none"></var>
-		<var id = "Stick_xy_color_var" style="display: none"></var>
-		<var id = "Stick_circle_color_var" style="display: none"></var>
-		<var id = "Stick_crosshair_var" style="display: none"></var>
-		<var id = "Stick_crosshair_var" style="display: none"></var>
-		<var id = "Stick_xy_diag_color_var" style="display: none"></var>
-		<script type="text/javascript">
-			$( document ).ready(function() {
-   				document.getElementById("log").style.width = parseInt($('#Throttle_var').css('width').replace('px', ''))*2 + parseInt($('#Stick_var').css('width').replace('px', '')) + 20 + "px";
-				document.getElementById("log").style.height = parseInt($('#Throttle_var').css('height').replace('px', '')) + parseInt($('#Rudder_var').css('height').replace('px', '')) + "px";
-				connected();
-				window.addEventListener("gamepadconnected", function() {
-					connected();
-				});
-				window.addEventListener("gamepaddisconnected", function() {
-					disconnected();
-				});
-			});
-		</script>
+
+		<canvas id="throttle-1"></canvas>
+		<canvas id="throttle-2"></canvas>
+		<canvas id="stick"></canvas>
+		<canvas id="rudder"></canvas>
+			
+    <script src="./js/core.js" type="module"></script>
 	</body>
 </html>
