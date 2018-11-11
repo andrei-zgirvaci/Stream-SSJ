@@ -2,6 +2,9 @@
 Thumbs.db
 ehthumbs.db
 
+node_modules/
+yarn.lock
+
 # Folder config file
 Desktop.ini
 
