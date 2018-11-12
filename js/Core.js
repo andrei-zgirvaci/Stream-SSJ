@@ -54,9 +54,8 @@ function displayComponents() {
 
     if (componentAvailable) {
       enableComponent(componentName);
-    }
-    else {
-      // disableComponent(componentName);
+    } else {
+      disableComponent(componentName);
     }
   }
 }
@@ -64,19 +63,17 @@ function displayComponents() {
 function enableComponent(componentName) {
   try {
     const element = document.getElementById(componentName).parentElement;
-    
+
     element.classList.remove("disabled");
-  }
-  catch (error) { }
+  } catch (error) {}
 }
 
 function disableComponent(componentName) {
   try {
     const element = document.getElementById(componentName).parentElement;
-    
+
     element.classList.add("disabled");
-  }
-  catch (error) { }
+  } catch (error) {}
 }
 
 function update() {
@@ -92,10 +89,10 @@ function updateData() {
   data.stick.y = getAxeValue("stick", "y");
 
   data.rudder.x = getAxeValue("rudder", "x");
-  
+
   data.throttle1.y = getAxeValue("throttle1", "y");
   data.throttle2.y = getAxeValue("throttle2", "y");
-  
+
   data.rotary.x = getAxeValue("rotary", "x");
   data.rotary.y = getAxeValue("rotary", "y");
 }

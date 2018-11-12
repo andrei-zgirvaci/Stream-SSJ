@@ -68,5 +68,5 @@ export function setCSSVariable(cssVariableName, value) {
 }
 
 export function getCSSVariable(cssVariableName) {
-  return getComputedStyle(document.documentElement).getPropertyValue(`--${cssVariableName}`);
+  return getComputedStyle(document.documentElement).getPropertyValue(`--${cssVariableName}`).trim();
 }

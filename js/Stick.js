@@ -1,78 +1,82 @@
+import {
+  getCSSVariable
+} from "./utils.js";
+
 let canvasSize = 0;
+let lineColor;
+let crosshairColor;
 
 const lineThickness = 2;
-const lineColor = "green";
 
-const crosshairSize = 20;
+const crosshairSize = 15;
 const crosshairThickness = crosshairSize / 5;
-const crosshairColor = "red";
+const crosshairRadius = crosshairThickness;
 
 
-function init(ctx) {
+function drawStatic(ctx) {
   ctx.fillStyle = lineColor;
   ctx.strokeStyle = lineColor;
   ctx.lineWidth = lineThickness;
 
   //draw x axis
-  ctx.fillRect(0, canvasSize / 2 - lineThickness / 2, canvasSize / 2 - crosshairThickness * 4, lineThickness);
-  ctx.fillRect(canvasSize / 2 + crosshairThickness * 4, canvasSize / 2 - lineThickness / 2, canvasSize, lineThickness);
+  ctx.fillRect(0, canvasSize / 2 - lineThickness / 2, canvasSize / 2 - crosshairThickness * crosshairRadius * 1.5, lineThickness);
+  ctx.fillRect(canvasSize / 2 + crosshairThickness * crosshairRadius * 1.5, canvasSize / 2 - lineThickness / 2, canvasSize, lineThickness);
 
   //draw y axis
-  ctx.fillRect(canvasSize / 2 - lineThickness / 2, 0, lineThickness, canvasSize / 2 - crosshairThickness * 4);
-  ctx.fillRect(canvasSize / 2 - lineThickness / 2, canvasSize / 2 + crosshairThickness * 4, lineThickness, canvasSize / 2);
+  ctx.fillRect(canvasSize / 2 - lineThickness / 2, 0, lineThickness, canvasSize / 2 - crosshairThickness * crosshairRadius * 1.5);
+  ctx.fillRect(canvasSize / 2 - lineThickness / 2, canvasSize / 2 + crosshairThickness * crosshairRadius * 1.5, lineThickness, canvasSize / 2);
 
   //diagonal x
   ctx.beginPath();
   ctx.moveTo(0, 0);
-  ctx.lineTo(canvasSize / 2 - crosshairThickness * 2.83, canvasSize / 2 - crosshairThickness * 2.83);
-  ctx.moveTo(canvasSize / 2 + crosshairThickness * 2.83, canvasSize / 2 + crosshairThickness * 2.83);
+  ctx.lineTo(canvasSize / 2 - crosshairThickness * crosshairRadius, canvasSize / 2 - crosshairThickness * crosshairRadius);
+  ctx.moveTo(canvasSize / 2 + crosshairThickness * crosshairRadius, canvasSize / 2 + crosshairThickness * crosshairRadius);
   ctx.lineTo(canvasSize, canvasSize);
   ctx.stroke();
   ctx.closePath();
 
   //diagonal y
   ctx.beginPath();
-  ctx.moveTo(canvasSize, 0);
-  ctx.lineTo(canvasSize / 2 + crosshairThickness * 2.83, canvasSize / 2 - crosshairThickness * 2.83);
-  ctx.moveTo(canvasSize / 2 - crosshairThickness * 2.83, canvasSize / 2 + crosshairThickness * 2.83);
-  ctx.lineTo(0, canvasSize);
+  ctx.moveTo(canvasSize - lineThickness * 2, 0);
+  ctx.lineTo(canvasSize / 2 + crosshairThickness * crosshairRadius, canvasSize / 2 - crosshairThickness * crosshairRadius);
+  ctx.moveTo(canvasSize / 2 - crosshairThickness * crosshairRadius, canvasSize / 2 + crosshairThickness * crosshairRadius);
+  ctx.lineTo(0, canvasSize - lineThickness * 2);
   ctx.stroke();
   ctx.closePath();
 
-  //fill with circles
+  // fill with circles
   ctx.beginPath();
-  ctx.arc(canvasSize / 2, canvasSize / 2, canvasSize / 10, 0, 2 * Math.PI);
+  ctx.arc(canvasSize / 2 - crosshairThickness / 2, canvasSize / 2 - crosshairThickness / 2, canvasSize / 10, 0, 2 * Math.PI);
   ctx.stroke();
   ctx.closePath();
   ctx.beginPath();
-  ctx.arc(canvasSize / 2, canvasSize / 2, canvasSize / 5, 0, 2 * Math.PI);
+  ctx.arc(canvasSize / 2 - crosshairThickness / 2, canvasSize / 2 - crosshairThickness / 2, canvasSize / 5, 0, 2 * Math.PI);
   ctx.stroke();
   ctx.closePath();
   ctx.beginPath();
-  ctx.arc(canvasSize / 2, canvasSize / 2, canvasSize / 3.33, 0, 2 * Math.PI);
+  ctx.arc(canvasSize / 2 - crosshairThickness / 2, canvasSize / 2 - crosshairThickness / 2, canvasSize / 3.33, 0, 2 * Math.PI);
   ctx.stroke();
   ctx.closePath();
   ctx.beginPath();
-  ctx.arc(canvasSize / 2, canvasSize / 2, canvasSize / 2.5, 0, 2 * Math.PI);
+  ctx.arc(canvasSize / 2 - crosshairThickness / 2, canvasSize / 2 - crosshairThickness / 2, canvasSize / 2.5, 0, 2 * Math.PI);
   ctx.stroke();
   ctx.closePath();
   ctx.beginPath();
-  ctx.arc(canvasSize / 2, canvasSize / 2, canvasSize / 2.1, 0, 2 * Math.PI);
+  ctx.arc(canvasSize / 2 - crosshairThickness / 2, canvasSize / 2 - crosshairThickness / 2, canvasSize / 2.1, 0, 2 * Math.PI);
   ctx.stroke();
   ctx.closePath();
 }
 
 function drawCrosshair(ctx, stickXPos, stickYPos) {
-  const crosshairPos = canvasSize / 2 - crosshairSize / 2;
-
+  const crosshairInitPos = canvasSize / 2 - crosshairSize / 2;
   const x = parseFloat(Math.round(stickXPos * 100) / 100);
   const y = parseFloat(Math.round(stickYPos * 100) / 100);
 
   ctx.fillStyle = crosshairColor;
 
   // draw crosshair
-  ctx.fillRect(crosshairPos + x * crosshairPos, crosshairPos + y * crosshairPos + crosshairThickness * 2, crosshairSize, crosshairThickness);
-  ctx.fillRect(crosshairPos + x * crosshairPos + crosshairThickness * 2, crosshairPos + y * crosshairPos, crosshairThickness, crosshairSize);
+  ctx.fillRect(crosshairInitPos + x * crosshairInitPos, crosshairInitPos + y * crosshairInitPos + crosshairThickness * 2, crosshairSize, crosshairThickness);
+  ctx.fillRect(crosshairInitPos + x * crosshairInitPos + crosshairThickness * 2, crosshairInitPos + y * crosshairInitPos, crosshairThickness, crosshairSize);
 }
 
 export function drawStick(stickXPos = 0, stickYPos = 0) {
@@ -81,9 +85,12 @@ export function drawStick(stickXPos = 0, stickYPos = 0) {
 
   canvasSize = canvas.offsetWidth;
 
+  lineColor = getCSSVariable("border-color");
+  crosshairColor = getCSSVariable("crosshair-color");
+
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  init(ctx);
+  drawStatic(ctx);
 
   drawCrosshair(ctx, stickXPos, stickYPos)
 }

@@ -1,29 +1,23 @@
+import {
+  getCSSVariable
+} from "./utils.js";
+
 let canvasWidth = 0;
 let canvasHeight = 0;
-
-const lineThickness = 2;
-const lineColor = "green";
+let crosshairColor;
 
 const crosshairThickness = 2.5;
-const crosshairColor = "red";
 
-
-function init(ctx) {
-  ctx.fillStyle = lineColor;
-
-  // draw vertical line
-  ctx.fillRect(canvasWidth / 2 - lineThickness / 2, 0, lineThickness, canvasHeight);
-}
 
 export function drawCrosshair(ctx, throttleYPos) {
-  const crosshairPos = canvasHeight / 2 - crosshairThickness / 2;
+  const crosshairInitPos = canvasHeight / 2 - crosshairThickness / 2;
 
   const y = parseFloat(Math.round(throttleYPos * 100) / 100);
 
   ctx.fillStyle = crosshairColor;
 
   // draw crosshair
-  ctx.fillRect(0, crosshairPos + throttleYPos * crosshairPos, canvasWidth, crosshairThickness);
+  ctx.fillRect(0, crosshairInitPos + y * crosshairInitPos, canvasWidth, crosshairThickness);
 }
 
 export function drawThrottle(throttleNumber, throttleYPos) {
@@ -33,9 +27,9 @@ export function drawThrottle(throttleNumber, throttleYPos) {
   canvasWidth = canvas.offsetWidth;
   canvasHeight = canvas.offsetHeight;
 
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  crosshairColor = getCSSVariable("crosshair-color");
 
-  init(ctx);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   drawCrosshair(ctx, throttleYPos);
 }

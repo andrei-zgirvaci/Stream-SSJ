@@ -1,14 +1,18 @@
+import {
+  getCSSVariable
+} from "./utils.js";
+
 let canvasWidth = 0;
 let canvasHeight = 0;
+let lineColor;
+let crosshairColor;
 
 const lineThickness = 2;
-const lineColor = "green";
 
 const crosshairThickness = 2.5;
-const crosshairColor = "red";
 
 
-function init(ctx) {
+function drawStatic(ctx) {
   ctx.fillStyle = lineColor;
 
   // draw horizontal line
@@ -16,14 +20,14 @@ function init(ctx) {
 }
 
 function drawCrosshair(ctx, rudderXPos) {
-  const crosshairPos = canvasWidth / 2 - crosshairThickness / 2;
+  const crosshairInitPos = canvasWidth / 2 - crosshairThickness / 2;
 
   const x = parseFloat(Math.round(rudderXPos * 100) / 100);
 
   ctx.fillStyle = crosshairColor;
 
   // draw crosshair
-  ctx.fillRect(crosshairPos + x * crosshairPos, 0, crosshairThickness, canvasHeight);
+  ctx.fillRect(crosshairInitPos + x * crosshairInitPos, 0, crosshairThickness, canvasHeight);
 }
 
 export function drawRudder(rudderXPos = 0) {
@@ -33,9 +37,12 @@ export function drawRudder(rudderXPos = 0) {
 	canvasWidth = canvas.offsetWidth;
 	canvasHeight = canvas.offsetHeight;
 
+  lineColor = getCSSVariable("border-color");
+  crosshairColor = getCSSVariable("crosshair-color");
+
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  init(ctx);
+  drawStatic(ctx);
 
   drawCrosshair(ctx, rudderXPos);
 }
