@@ -1,4 +1,4 @@
-export const gamepadTypes = {
+export const gamepads = {
   stick: {
     ID: "VKB-Sim Gunfighter Modern Combat PRO (Vendor: 231d Product: 0125)"
   },
@@ -10,26 +10,26 @@ export const gamepadTypes = {
   }
 };
 
-export const gamepadsData = {
+export const gamepadsAxesInfo = {
   stick: {
-    gamepadID: gamepadTypes["stick"].ID,
+    gamepadID: gamepads["stick"].ID,
     x: 0,
     y: 1,
   },
   rudder: {
-    gamepadID: gamepadTypes["stick"].ID,
+    gamepadID: gamepads["stick"].ID,
     x: 2
   },
   throttle1: {
-    gamepadID: gamepadTypes["throttle"].ID,
+    gamepadID: gamepads["throttle"].ID,
     y: 2
   },
   throttle2: {
-    gamepadID: gamepadTypes["throttle"].ID,
+    gamepadID: gamepads["throttle"].ID,
     y: 6
   },
   rotary: {
-    gamepadID: gamepadTypes["rotary"].ID,
+    gamepadID: gamepads["rotary"].ID,
     x: 3,
     y: 4
   }
@@ -39,7 +39,7 @@ export function componentIsAvailable(gamepadType, connectedGamepads = navigator.
   let gamepadIsConnected = false;
 
   try {
-    gamepadIsConnected = connectedGamepads.some(gamepad => gamepad.id === gamepadsData[gamepadType].gamepadID);
+    gamepadIsConnected = connectedGamepads.some(gamepad => gamepad.id === gamepadsAxesInfo[gamepadType].gamepadID);
   } catch (error) {}
 
   return gamepadIsConnected;
@@ -53,8 +53,8 @@ export function getAxeValue(gamepadType, axe, connectedGamepads=navigator.getGam
   let value = null;
 
   try {
-    const gamepad = getGamepad(gamepadsData[gamepadType].gamepadID, connectedGamepads);
-    value = gamepad.axes[gamepadsData[gamepadType][axe]];
+    const gamepad = getGamepad(gamepadsAxesInfo[gamepadType].gamepadID, connectedGamepads);
+    value = gamepad.axes[gamepadsAxesInfo[gamepadType][axe]];
   }
   catch (error) {
     value = 0;
