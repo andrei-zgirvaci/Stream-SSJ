@@ -27,7 +27,7 @@ export function drawCrosshair(ctx, throttleYPos) {
 }
 
 export function drawThrottle(throttleNumber, throttleYPos) {
-  const canvas = document.getElementById(`throttle-${throttleNumber}`);
+  const canvas = document.getElementById(`throttle${throttleNumber}`);
   const ctx = canvas.getContext("2d");
 
   canvas.width = canvasWidth;

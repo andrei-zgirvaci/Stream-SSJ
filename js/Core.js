@@ -8,8 +8,7 @@ import {
   drawRudder
 } from "./rudder.js";
 import {
-  connected,
-  disconnected,
+  componentIsAvailable,
   getAxeValue
 } from "./utils.js";
 
@@ -35,17 +34,47 @@ let data = {
 
 document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("gamepadconnected", function (gamepad) {
-    connected(gamepad);
+    displayComponents();
   });
 
   window.addEventListener("gamepaddisconnected", function (gamepad) {
-    disconnected(gamepad);
+    displayComponents();
   });
 
-  connected({ id: "VKB-Sim Gunfighter Modern Combat PRO (Vendor: 231d Product: 0125)" });
-
+  displayComponents();
   update();
 });
+
+function displayComponents() {
+  for (let componentName in data) {
+    const componentAvailable = componentIsAvailable(componentName);
+
+    if (componentAvailable) {
+      enableComponent(componentName);
+    }
+    else {
+      disableComponent(componentName);
+    }
+  }
+}
+
+function enableComponent(componentName) {
+  try {
+    const element = document.getElementById(componentName);
+    
+    element.classList.remove("disabled");
+  }
+  catch (error) { }
+}
+
+function disableComponent(componentName) {
+  try {
+    const element = document.getElementById(componentName);
+    
+    element.classList.add("disabled");
+  }
+  catch (error) { }
+}
 
 function update() {
   updateData();

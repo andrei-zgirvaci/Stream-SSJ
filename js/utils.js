@@ -1,8 +1,8 @@
-const gamepads = {
+export const gamepadTypes = {
   stick: {
     ID: "VKB-Sim Gunfighter Modern Combat PRO (Vendor: 231d Product: 0125)"
   },
-  throttles: {
+  throttle: {
     ID: "Pro Flight X65 Control System (Vendor: 06a3 Product: 0b6a)"
   },
   rotary: {
@@ -10,62 +10,53 @@ const gamepads = {
   }
 };
 
-const axes = {
+export const gamepadsData = {
   stick: {
-    gamepadID: gamepads["stick"].ID,
+    gamepadID: gamepadTypes["stick"].ID,
     x: 0,
     y: 1,
   },
   rudder: {
-    gamepadID: gamepads["stick"].ID,
+    gamepadID: gamepadTypes["stick"].ID,
     x: 2
   },
   throttle1: {
-    gamepadID: gamepads["throttles"].ID,
+    gamepadID: gamepadTypes["throttle"].ID,
     y: 2
   },
   throttle2: {
-    gamepadID: gamepads["throttles"].ID,
+    gamepadID: gamepadTypes["throttle"].ID,
     y: 6
   },
   rotary: {
-    gamepadID: gamepads["rotary"].ID,
+    gamepadID: gamepadTypes["rotary"].ID,
     x: 3,
     y: 4
   }
 }
 
-export function gamepadConnected(connectedGamepad) {
-  connectedGamepads[connectedGamepad.id] = true;
-}
-
-export function gamepadDisconnected(disconnectedGamepad) {
-  delete connectedGamepads[disconnectedGamepad.id];
-}
-
-export function gamepadIsConnected(gamepadType) {
-  return navigator.getGamepads().find(gamepad => gamepad.id === axes[gamepadType].gamepadID) !== null;
-}
-
-export function getGamepad(gamepadID) {
-  const gamepad = null;
+export function componentIsAvailable(gamepadType, connectedGamepads = navigator.getGamepads()) {
+  let gamepadIsConnected = false;
 
   try {
-    gamepad = navigator.getGamepads().find(gamepad => gamepad.id === gamepadID)
-	} catch(error){
-		console.log(`I couldn't find gamepad(${gamepadID})`);
-  }
-  
-  return gamepad;
+    gamepadIsConnected = connectedGamepads.some(gamepad => gamepad.id === gamepadsData[gamepadType].gamepadID);
+  } catch (error) {}
+
+  return gamepadIsConnected;
 }
 
-export function getAxeValue(gamepadType, axe) {
+export function getGamepad(gamepadID, connectedGamepads = navigator.getGamepads()) {
+  return connectedGamepads.find(gamepad => gamepad.id === gamepadID)
+}
+
+export function getAxeValue(gamepadType, axe, connectedGamepads=navigator.getGamepads()) {
   let value = null;
 
   try {
-    const gamepad = getGamepad(axes[gamepadType].gamepadID);
-    value = gamepad.axes[axes[gamepadType][axe]];
-  } catch (error) {
+    const gamepad = getGamepad(gamepadsData[gamepadType].gamepadID, connectedGamepads);
+    value = gamepad.axes[gamepadsData[gamepadType][axe]];
+  }
+  catch (error) {
     value = 0;
   }
 
