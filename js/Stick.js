@@ -3,7 +3,7 @@ const canvasSize = 300;
 const lineThickness = 2;
 const lineColor = "green";
 
-const crosshairSize = 18;
+const crosshairSize = 20;
 const crosshairThickness = crosshairSize / 5;
 const crosshairColor = "red";
 

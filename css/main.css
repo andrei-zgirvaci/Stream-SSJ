@@ -1,4 +1,7 @@
-:root {}
+:root {
+  --main-color: red;
+  --border-color: green;
+}
 
 body {
   background-color: palegoldenrod;
@@ -11,30 +14,34 @@ body {
   font-size: 16px;
   text-align: center;
   vertical-align: middle;
-  color: rgba(255, 0, 0, 1);
+  color: var(--main-color);
 }
 
 /* Stick */
 #stick {
-  display: none;
   border-width: 2px;
   border-style: solid;
-  border-color: rgba(0, 81, 0, 1);
+  border-color: var(--border-color);
 }
 
 /* Throttle */
-#throttle-1,
-#throttle-2 {
-  display: none;
+#throttle1,
+#throttle2 {
   border-width: 2px;
   border-style: solid;
-  border-color: rgba(0, 81, 0, 1);
+  border-color: var(--border-color);
 }
 
 /* Rudder */
 #rudder {
-  display: none;
   border-width: 2px;
   border-style: solid;
-  border-color: rgba(0, 81, 0, 1);
+  border-color: var(--border-color);
+}
+
+/* Rotary */
+#rotary {
+  border-width: 2px;
+  border-style: solid;
+  border-color: var(--border-color);
 }

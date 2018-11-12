@@ -16,14 +16,14 @@ function init(ctx) {
 }
 
 export function drawCrosshair(ctx, throttleYPos) {
-  const throttlePos = canvasHeight / 2 - lineThickness / 2;
+  const crosshairPos = canvasHeight / 2 - crosshairThickness / 2;
 
   const y = parseFloat(Math.round(throttleYPos * 100) / 100);
 
   ctx.fillStyle = crosshairColor;
 
   // draw crosshair
-  ctx.fillRect(0, throttlePos + throttleYPos * throttlePos, canvasWidth, crosshairThickness);
+  ctx.fillRect(0, crosshairPos + throttleYPos * crosshairPos, canvasWidth, crosshairThickness);
 }
 
 export function drawThrottle(throttleNumber, throttleYPos) {

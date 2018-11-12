@@ -8,6 +8,9 @@ import {
   drawRudder
 } from "./rudder.js";
 import {
+  drawRotary
+} from "./rotary.js";
+import {
   componentIsAvailable,
   getAxeValue
 } from "./utils.js";
@@ -81,7 +84,7 @@ function update() {
 
   drawCanvases();
 
-  // requestAnimationFrame(update);
+  requestAnimationFrame(update);
 }
 
 function updateData() {
@@ -102,4 +105,5 @@ function drawCanvases() {
   drawThrottle(1, data.throttle1.y);
   drawThrottle(2, data.throttle2.y);
   drawRudder(data.rudder.x);
+  drawRotary(data.rotary.x, data.rotary.y);
 }

@@ -16,14 +16,14 @@ function init(ctx) {
 }
 
 function drawCrosshair(ctx, rudderXPos) {
-  const rudderPos = canvasWidth / 2 - crosshairThickness / 2;
+  const crosshairPos = canvasWidth / 2 - crosshairThickness / 2;
 
   const x = parseFloat(Math.round(rudderXPos * 100) / 100);
 
   ctx.fillStyle = crosshairColor;
 
   // draw crosshair
-  ctx.fillRect(rudderPos + x * rudderPos, 0, crosshairThickness, canvasHeight);
+  ctx.fillRect(crosshairPos + x * crosshairPos, 0, crosshairThickness, canvasHeight);
 }
 
 export function drawRudder(rudderXPos = 0) {
