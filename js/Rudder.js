@@ -1,5 +1,5 @@
-const canvasWidth = 300;
-const canvasHeight = 30;
+let canvasWidth = 0;
+let canvasHeight = 0;
 
 const lineThickness = 2;
 const lineColor = "green";
@@ -30,8 +30,10 @@ export function drawRudder(rudderXPos = 0) {
   const canvas = document.getElementById("rudder");
   const ctx = canvas.getContext("2d");
 
-  canvas.width = canvasWidth;
-  canvas.height = canvasHeight;
+	canvasWidth = canvas.offsetWidth;
+	canvasHeight = canvas.offsetHeight;
+
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   init(ctx);
 

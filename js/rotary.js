@@ -1,4 +1,4 @@
-const canvasSize = 300;
+let canvasSize = 0;
 
 const crosshairThickness = 2.5;
 const crosshairColor = "red";
@@ -20,8 +20,9 @@ export function drawRotary(rotaryXPos, rotaryYPos) {
 	const canvas = document.getElementById("rotary");
 	const ctx = canvas.getContext("2d");
 
-	canvas.width = canvasSize;
-	canvas.height = canvasSize;
+	canvasSize = canvas.offsetWidth;
+	
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
 	drawCrosshair(ctx, rotaryXPos, rotaryYPos);
 }

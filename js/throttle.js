@@ -1,5 +1,5 @@
-const canvasWidth = 30;
-const canvasHeight = 200;
+let canvasWidth = 0;
+let canvasHeight = 0;
 
 const lineThickness = 2;
 const lineColor = "green";
@@ -30,8 +30,10 @@ export function drawThrottle(throttleNumber, throttleYPos) {
   const canvas = document.getElementById(`throttle${throttleNumber}`);
   const ctx = canvas.getContext("2d");
 
-  canvas.width = canvasWidth;
-  canvas.height = canvasHeight;
+  canvasWidth = canvas.offsetWidth;
+  canvasHeight = canvas.offsetHeight;
+
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   init(ctx);
 

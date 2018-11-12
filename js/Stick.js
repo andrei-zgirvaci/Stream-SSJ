@@ -1,4 +1,4 @@
-const canvasSize = 300;
+let canvasSize = 0;
 
 const lineThickness = 2;
 const lineColor = "green";
@@ -57,7 +57,7 @@ function init(ctx) {
   ctx.stroke();
   ctx.closePath();
   ctx.beginPath();
-  ctx.arc(canvasSize / 2, canvasSize / 2, canvasSize / 2 - 1.5, 0, 2 * Math.PI);
+  ctx.arc(canvasSize / 2, canvasSize / 2, canvasSize / 2.1, 0, 2 * Math.PI);
   ctx.stroke();
   ctx.closePath();
 }
@@ -79,8 +79,9 @@ export function drawStick(stickXPos = 0, stickYPos = 0) {
   const canvas = document.getElementById("stick");
   const ctx = canvas.getContext("2d");
 
-  canvas.width = canvasSize;
-  canvas.height = canvasSize;
+  canvasSize = canvas.offsetWidth;
+
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   init(ctx);
 

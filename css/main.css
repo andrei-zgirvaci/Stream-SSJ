@@ -3,21 +3,41 @@
   --border-color: green;
 }
 
-body {
-  background-color: palegoldenrod;
+main {
+  display: inline-grid;
 }
 
-#log {
-  display: table-cell;
-  font-family: sans-serif;
+.canvas-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.canvas-wrapper span {
+  display: none;
+}
+.canvas-wrapper canvas {
+  opacity: 1;
+  margin: 1px;
+}
+.canvas-wrapper.disabled span {
+  display: inline;
+  position: absolute;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
-  font-size: 16px;
-  text-align: center;
-  vertical-align: middle;
   color: var(--main-color);
+}
+.canvas-wrapper.disabled canvas {
+  opacity: 0.2;
 }
 
 /* Stick */
+#stick-container {
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
 #stick {
   border-width: 2px;
   border-style: solid;
@@ -25,6 +45,18 @@ body {
 }
 
 /* Throttle */
+#throttles-container {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
+
+#throttles-container span {
+  /* font-size: 10px; */
+  transform: rotateZ(-90deg);
+}
+
 #throttle1,
 #throttle2 {
   border-width: 2px;
@@ -33,6 +65,13 @@ body {
 }
 
 /* Rudder */
+#rudder-container {
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 2;
+}
+
 #rudder {
   border-width: 2px;
   border-style: solid;
@@ -40,6 +79,14 @@ body {
 }
 
 /* Rotary */
+#rotary-container {
+  /* display: none; */
+  grid-column-start: 2;
+  grid-column-end: 2;
+  grid-row-start: 3;
+  grid-row-end: 3;
+}
+
 #rotary {
   border-width: 2px;
   border-style: solid;

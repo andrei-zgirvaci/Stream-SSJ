@@ -9,15 +9,26 @@
 		<title>Stream-SSJ</title>
 	</head>
 	<body>
-    <div></div>
-		<div id="log">Connect Joystick and press any button</div>
-
-		<canvas id="throttle1"></canvas>
-		<canvas id="throttle2"></canvas>
-		<canvas id="stick"></canvas>
-		<canvas id="rudder"></canvas>
-		<canvas id="rotary"></canvas>
-			
+    <main>
+			<div id="throttles-container" class="canvas-wrapper">
+				<span>Connect Throttle and move it around</span>
+				<canvas id="throttle1" width="30" height="300"></canvas>
+				<canvas id="throttle2" width="30" height="300"></canvas>
+			</div>
+			<div id="stick-container" class="canvas-wrapper">
+				<span>Connect Joystick and move it around</span>
+				<canvas id="stick" width="300" height="300"></canvas>
+			</div>
+			<div id="rudder-container" class="canvas-wrapper">
+				<span>Connect Rudder and move it around</span>
+				<canvas id="rudder" width="300" height="30"></canvas>
+			</div>
+			<div id="rotary-container" class="canvas-wrapper">
+				<span>Connect Rotary and move it around</span>
+				<canvas id="rotary" width="300" height="300"></canvas>
+			</div>
+		</main>
+		
     <script src="./js/core.js" type="module"></script>
 	</body>
 </html>

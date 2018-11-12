@@ -56,14 +56,14 @@ function displayComponents() {
       enableComponent(componentName);
     }
     else {
-      disableComponent(componentName);
+      // disableComponent(componentName);
     }
   }
 }
 
 function enableComponent(componentName) {
   try {
-    const element = document.getElementById(componentName);
+    const element = document.getElementById(componentName).parentElement;
     
     element.classList.remove("disabled");
   }
@@ -72,7 +72,7 @@ function enableComponent(componentName) {
 
 function disableComponent(componentName) {
   try {
-    const element = document.getElementById(componentName);
+    const element = document.getElementById(componentName).parentElement;
     
     element.classList.add("disabled");
   }
