@@ -1,6 +1,6 @@
 # Stream-SSJ
 
-This is a web-application written in JavaScript, it monitors your joystick and shows it's movement in a graphical form. Now it supports joystick thrusters, pedals and rotary.
+This is a web-application written in JavaScript, it monitors your joystick and shows it's movement in a graphical form. Now it supports joystick throttles, pedals and rotary.
 
 WRITTEN BY: Andrei Zgirvaci
 
@@ -12,17 +12,21 @@ CONTRIBUTE: Contributions are always welcome!
 
 ## Usage
 
-**Add New scene -> BrowserSource**
+**Add New Scene -> Browser**
 
-![1](http://i.imgur.com/gEJY2vw.png)
+![1](http://i.imgur.com/sxvd1Zu.png)
   
-**Choose Local File Location**
+**Choose Local File**
 
-![2](http://i.imgur.com/KJtA8qY.png)
+![2](http://i.imgur.com/pLC7O1E.png)
+
+**Voilà**
+
+![2](http://i.imgur.com/fyGu31t.png)
 
 ## CSS Customization
 
-This app also has a small API, where you can change values of [variables for joystick](https://github.com/MD3XTER/Stream-SSJ/blob/master/doc/doc_joystick.pdf) and [variables for rotary](https://github.com/MD3XTER/Stream-SSJ/blob/master/doc/doc_Rotary.pdf) in [OBS](https://obsproject.com/). You can customize the appearance from color to transparency and the size of the axes and window.
+You can customize the crosshair and line colors in the .css file.
 
 ## Support for your Joystick
 

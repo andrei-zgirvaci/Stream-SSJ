@@ -54,11 +54,14 @@ main {
 #throttle1 {
   border-left: 0;
   border-right: 0;
+  border-color: transparent;  
   margin-right: 0;
 }
 #throttle2 {
   margin-left: 0;
   border-right: 0;
+  border-top-color: transparent;  
+  border-bottom-color: transparent;  
 }
 
 /* Rudder */
