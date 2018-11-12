@@ -1,5 +1,5 @@
 :root {
-  --main-color: red;
+  --crosshair-color: red;
   --border-color: green;
 }
 
@@ -18,13 +18,14 @@ main {
 .canvas-wrapper canvas {
   opacity: 1;
   margin: 1px;
+  border: 2px solid var(--border-color);
 }
 .canvas-wrapper.disabled span {
   display: inline;
   position: absolute;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
-  color: var(--main-color);
+  color: var(--crosshair-color);
 }
 .canvas-wrapper.disabled canvas {
   opacity: 0.2;
@@ -38,12 +39,6 @@ main {
   grid-row-end: 2;
 }
 
-#stick {
-  border-width: 2px;
-  border-style: solid;
-  border-color: var(--border-color);
-}
-
 /* Throttle */
 #throttles-container {
   grid-column-start: 1;
@@ -53,15 +48,17 @@ main {
 }
 
 #throttles-container span {
-  /* font-size: 10px; */
   transform: rotateZ(-90deg);
 }
 
-#throttle1,
+#throttle1 {
+  border-left: 0;
+  border-right: 0;
+  margin-right: 0;
+}
 #throttle2 {
-  border-width: 2px;
-  border-style: solid;
-  border-color: var(--border-color);
+  margin-left: 0;
+  border-right: 0;
 }
 
 /* Rudder */
@@ -72,12 +69,6 @@ main {
   grid-row-end: 2;
 }
 
-#rudder {
-  border-width: 2px;
-  border-style: solid;
-  border-color: var(--border-color);
-}
-
 /* Rotary */
 #rotary-container {
   /* display: none; */
@@ -85,10 +76,4 @@ main {
   grid-column-end: 2;
   grid-row-start: 3;
   grid-row-end: 3;
-}
-
-#rotary {
-  border-width: 2px;
-  border-style: solid;
-  border-color: var(--border-color);
 }
