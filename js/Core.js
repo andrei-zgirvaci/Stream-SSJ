@@ -79,7 +79,7 @@ function disableComponent(componentName) {
 }
 
 function update() {
-  // updateData();
+  updateData();
 
   drawCanvases();
 
