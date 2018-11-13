@@ -1,5 +1,6 @@
 import {
-  getCSSVariable
+  getCSSVariable,
+  getRealPosValue
 } from "./utils.js";
 
 let canvasWidth = 0;
@@ -12,7 +13,7 @@ const crosshairThickness = 2.5;
 export function drawCrosshair(ctx, throttleYPos) {
   const crosshairInitPos = canvasHeight / 2 - crosshairThickness / 2;
 
-  const y = parseFloat(Math.round(throttleYPos * 100) / 100);
+  const y = getRealPosValue(throttleYPos);
 
   ctx.fillStyle = crosshairColor;
 

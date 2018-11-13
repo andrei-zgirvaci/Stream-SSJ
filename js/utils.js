@@ -63,8 +63,8 @@ export function getAxeValue(gamepadType, axe, connectedGamepads=navigator.getGam
   return value;
 }
 
-export function setCSSVariable(cssVariableName, value) {
-  document.documentElement.style.setProperty(`--${cssVariableName}`, value);
+export function getRealPosValue(rawValue) {
+  return parseFloat(Math.round(rawValue * 100) / 100);
 }
 
 export function getCSSVariable(cssVariableName) {
