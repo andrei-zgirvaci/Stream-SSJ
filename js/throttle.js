@@ -26,7 +26,7 @@ export function drawThrottle(throttleNumber, throttleYPos) {
   const ctx = canvas.getContext("2d");
 
   canvasWidth = canvas.offsetWidth;
-  canvasHeight = canvas.offsetHeight;
+  canvasHeight = canvas.offsetHeight - crosshairThickness * 2 + 1;
 
   crosshairColor = getCSSVariable("crosshair-color");
 

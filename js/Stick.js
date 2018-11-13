@@ -38,32 +38,32 @@ function drawStatic(ctx) {
 
   //diagonal y
   ctx.beginPath();
-  ctx.moveTo(canvasSize - lineThickness * 2, 0);
+  ctx.moveTo(canvasSize, 0);
   ctx.lineTo(canvasSize / 2 + crosshairThickness * crosshairRadius, canvasSize / 2 - crosshairThickness * crosshairRadius);
   ctx.moveTo(canvasSize / 2 - crosshairThickness * crosshairRadius, canvasSize / 2 + crosshairThickness * crosshairRadius);
-  ctx.lineTo(0, canvasSize - lineThickness * 2);
+  ctx.lineTo(0, canvasSize);
   ctx.stroke();
   ctx.closePath();
 
   // fill with circles
   ctx.beginPath();
-  ctx.arc(canvasSize / 2 - crosshairThickness / 2, canvasSize / 2 - crosshairThickness / 2, canvasSize / 10, 0, 2 * Math.PI);
+  ctx.arc(canvasSize / 2, canvasSize / 2, canvasSize / 10, 0, 2 * Math.PI);
   ctx.stroke();
   ctx.closePath();
   ctx.beginPath();
-  ctx.arc(canvasSize / 2 - crosshairThickness / 2, canvasSize / 2 - crosshairThickness / 2, canvasSize / 5, 0, 2 * Math.PI);
+  ctx.arc(canvasSize / 2, canvasSize / 2, canvasSize / 5, 0, 2 * Math.PI);
   ctx.stroke();
   ctx.closePath();
   ctx.beginPath();
-  ctx.arc(canvasSize / 2 - crosshairThickness / 2, canvasSize / 2 - crosshairThickness / 2, canvasSize / 3.33, 0, 2 * Math.PI);
+  ctx.arc(canvasSize / 2, canvasSize / 2, canvasSize / 3.33, 0, 2 * Math.PI);
   ctx.stroke();
   ctx.closePath();
   ctx.beginPath();
-  ctx.arc(canvasSize / 2 - crosshairThickness / 2, canvasSize / 2 - crosshairThickness / 2, canvasSize / 2.5, 0, 2 * Math.PI);
+  ctx.arc(canvasSize / 2, canvasSize / 2, canvasSize / 2.5, 0, 2 * Math.PI);
   ctx.stroke();
   ctx.closePath();
   ctx.beginPath();
-  ctx.arc(canvasSize / 2 - crosshairThickness / 2, canvasSize / 2 - crosshairThickness / 2, canvasSize / 2.1, 0, 2 * Math.PI);
+  ctx.arc(canvasSize / 2, canvasSize / 2, canvasSize / 2.1, 0, 2 * Math.PI);
   ctx.stroke();
   ctx.closePath();
 }
@@ -84,7 +84,7 @@ export function drawStick(stickXPos = 0, stickYPos = 0) {
   const canvas = document.getElementById("stick");
   const ctx = canvas.getContext("2d");
 
-  canvasSize = canvas.offsetWidth;
+  canvasSize = canvas.offsetWidth - crosshairThickness * 2 + 2;
 
   lineColor = getCSSVariable("border-color");
   crosshairColor = getCSSVariable("crosshair-color");

@@ -23,7 +23,7 @@ function drawStatic(ctx) {
 function drawCrosshair(ctx, rudderXPos) {
   const crosshairInitPos = canvasWidth / 2 - crosshairThickness / 2;
 
-  const x = getRealPosValue(rudderXPos);
+  const x = -getRealPosValue(rudderXPos);
 
   ctx.fillStyle = crosshairColor;
 
@@ -35,8 +35,8 @@ export function drawRudder(rudderXPos = 0) {
   const canvas = document.getElementById("rudder");
   const ctx = canvas.getContext("2d");
 
-	canvasWidth = canvas.offsetWidth;
-	canvasHeight = canvas.offsetHeight;
+  canvasWidth = canvas.offsetWidth - crosshairThickness * 2 + 1;
+  canvasHeight = canvas.offsetHeight;
 
   lineColor = getCSSVariable("border-color");
   crosshairColor = getCSSVariable("crosshair-color");

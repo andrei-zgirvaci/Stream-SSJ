@@ -24,7 +24,7 @@ export function drawRotary(rotaryXPos, rotaryYPos) {
 	const canvas = document.getElementById("rotary");
 	const ctx = canvas.getContext("2d");
 
-	canvasSize = canvas.offsetWidth;
+	canvasSize = canvas.offsetWidth - crosshairThickness * 2 + 1;
 
 	crosshairColor = getCSSVariable("crosshair-color");
 

@@ -37,10 +37,12 @@ let data = {
 
 document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("gamepadconnected", function (gamepad) {
+    console.log("Gamepad Connected", gamepad);
     displayComponents();
   });
 
   window.addEventListener("gamepaddisconnected", function (gamepad) {
+    console.log("Gamepad Disconnected", gamepad);
     displayComponents();
   });
 
@@ -77,7 +79,7 @@ function disableComponent(componentName) {
 }
 
 function update() {
-  updateData();
+  // updateData();
 
   drawCanvases();
 

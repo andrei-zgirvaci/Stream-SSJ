@@ -7,7 +7,7 @@ import {
 
 test('componentIsAvailable', () => {
   const connectedGamepads = [{
-      id: "VKB-Sim Gunfighter Modern Combat PRO (Vendor: 231d Product: 0125)"
+      id: " VKB-Sim Gunfighter Modern Combat PRO  (Vendor: 231d Product: 0125)"
     },
     {
       id: "Pro Flight X65 Control System (Vendor: 06a3 Product: 0b6a)"
@@ -27,7 +27,7 @@ test('componentIsAvailable', () => {
 
 test('getGamepad', () => {
   const connectedGamepads = [{
-      id: "VKB-Sim Gunfighter Modern Combat PRO (Vendor: 231d Product: 0125)"
+      id: " VKB-Sim Gunfighter Modern Combat PRO  (Vendor: 231d Product: 0125)"
     },
     {
       id: "Pro Flight X65 Control System (Vendor: 06a3 Product: 0b6a)"
@@ -44,7 +44,7 @@ test('getGamepad', () => {
 
 test('getAxeValue', () => {
   const connectedGamepads = [{
-      id: "VKB-Sim Gunfighter Modern Combat PRO (Vendor: 231d Product: 0125)",
+      id: " VKB-Sim Gunfighter Modern Combat PRO  (Vendor: 231d Product: 0125)",
       axes: [
         5,
         2,
@@ -86,7 +86,7 @@ test('getAxeValue', () => {
 
   expect(getAxeValue("rotary", "x", connectedGamepads)).toBe(4);
   expect(getAxeValue("rotary", "y", connectedGamepads)).toBe(7);
-  
+
   // false
   expect(getAxeValue("wrongType", "y", connectedGamepads)).toBe(0);
 });

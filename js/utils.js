@@ -1,6 +1,6 @@
 export const gamepads = {
   stick: {
-    ID: "VKB-Sim Gunfighter Modern Combat PRO (Vendor: 231d Product: 0125)"
+    ID: " VKB-Sim Gunfighter Modern Combat PRO  (Vendor: 231d Product: 0125)"
   },
   throttle: {
     ID: "Pro Flight X65 Control System (Vendor: 06a3 Product: 0b6a)"
@@ -38,25 +38,37 @@ export const gamepadsAxesInfo = {
 export function componentIsAvailable(gamepadType, connectedGamepads = navigator.getGamepads()) {
   let gamepadIsConnected = false;
 
-  try {
-    gamepadIsConnected = connectedGamepads.some(gamepad => gamepad.id === gamepadsAxesInfo[gamepadType].gamepadID);
-  } catch (error) {}
+  for (let gamepad of connectedGamepads) {
+    try {
+      if (gamepad.id === gamepadsAxesInfo[gamepadType].gamepadID) {
+        return true
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   return gamepadIsConnected;
 }
 
 export function getGamepad(gamepadID, connectedGamepads = navigator.getGamepads()) {
-  return connectedGamepads.find(gamepad => gamepad.id === gamepadID)
+  for (let gamepad of connectedGamepads) {
+    if (gamepad.id === gamepadID) {
+      return gamepad
+    }
+  }
+
+  return undefined;
 }
 
-export function getAxeValue(gamepadType, axe, connectedGamepads=navigator.getGamepads()) {
+export function getAxeValue(gamepadType, axe, connectedGamepads = navigator.getGamepads()) {
   let value = null;
 
   try {
     const gamepad = getGamepad(gamepadsAxesInfo[gamepadType].gamepadID, connectedGamepads);
     value = gamepad.axes[gamepadsAxesInfo[gamepadType][axe]];
-  }
-  catch (error) {
+  } catch (error) {
+    console.log(error);
     value = 0;
   }
 
