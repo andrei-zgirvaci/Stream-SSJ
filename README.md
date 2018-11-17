@@ -1,5 +1,6 @@
 # Stream-SSJ
-This is a web-application written in JavaScript, it monitors your joystick and shows it movement in a graphical form. Now it supports joystick thrusters, pedals and rotary.
+
+This is a web-application written in JavaScript, it monitors your joystick and shows it's movement in a graphical form. Now it supports joystick throttles, pedals and rotary.
 
 WRITTEN BY: Andrei Zgirvaci
 
@@ -9,19 +10,24 @@ CONTRIBUTE: Contributions are always welcome!
 
 *If you can, please take a minute to star this repo and follow me, It will be much appreciated!!!*
 
-## CSS customization
-This app also has a small APPI, where you can change values of CSS variables in [OBS](https://obsproject.com/). You can customize the appearance from color to transparency and the size of the axes and window.
+## Usage
 
-  1. Add new scene -> BrowserSource
-![](http://i.imgur.com/gEJY2vw.png)
+**Add New Scene -> Browser**
+
+![1](http://i.imgur.com/sxvd1Zu.png)
   
-  2. Add web-application link in url
-![](http://i.imgur.com/KJtA8qY.png)
+**Choose Local File**
 
-  3. Edit CSS values with yours [Variables for joystick](https://github.com/MD3XTER/Stream-SSJ/blob/master/doc/doc_joystick.pdf), [Variables for rotary](https://github.com/MD3XTER/Stream-SSJ/blob/master/doc/doc_Rotary.pdf)
+![2](http://i.imgur.com/pLC7O1E.png)
 
-## Requirements
-  * [OBS-Studio-Full-Installer](https://github.com/jp9000/obs-studio/releases)
+**Voilà**
 
-## Support for your joystick
-_To make this tool to work for you, please contact me by e-mail: zgirvaciandrei@gmail.com_
+![2](http://i.imgur.com/fyGu31t.png)
+
+## CSS Customization
+
+You can customize the crosshair and line colors in the .css file.
+
+## Support for your Joystick
+
+To make this tool to work for you, please contact me by e-mail: zgirvaciandrei@gmail.com
