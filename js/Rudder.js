@@ -23,7 +23,7 @@ function drawStatic(ctx) {
 function drawCrosshair(ctx, rudderXPos) {
   const crosshairInitPos = canvasWidth / 2 - crosshairThickness / 2;
 
-  const x = -getRealPosValue(rudderXPos);
+  const x = getRealPosValue(rudderXPos);
 
   ctx.fillStyle = crosshairColor;
 
