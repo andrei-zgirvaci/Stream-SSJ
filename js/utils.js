@@ -1,6 +1,6 @@
 export const gamepads = {
   stick: {
-    ID: " VKB-Sim Gunfighter Modern Combat PRO  (Vendor: 231d Product: 0125)"
+    ID: " VKB-Sim Gunfighter Modern Combat Pro  (Vendor: 231d Product: 0125)"
   },
   throttle: {
     ID: "Pro Flight X65 Control System (Vendor: 06a3 Product: 0b6a)"
