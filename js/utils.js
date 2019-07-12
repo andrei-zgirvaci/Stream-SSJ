@@ -18,7 +18,7 @@ export const gamepadsAxesInfo = {
   },
   rudder: {
     gamepadID: gamepads["stick"].ID,
-    x: 2
+    x: 6
   },
   throttle1: {
     gamepadID: gamepads["throttle"].ID,
