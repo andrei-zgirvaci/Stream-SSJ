@@ -27,7 +27,3 @@ CONTRIBUTE: Contributions are always welcome!
 ## CSS Customization
 
 You can customize the crosshair and line colors in the .css file.
-
-## Support for your Joystick
-
-To make this tool to work for you, please contact me by e-mail: zgirvaciandrei@gmail.com
